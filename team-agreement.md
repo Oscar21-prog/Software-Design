@@ -71,6 +71,7 @@ When we receive the other team's documentation, we split the implementation work
 - **Shared document:** Word / Google Docs for the specification and the evaluation shared with the lecturer.
 - **Diagrams:** draw.io, PlantUML or Mermaid, with one consistent style across the whole document.
 - **GitHub:** repository for submissions, this agreement and the implementation code. GitHub Issues and Pull Requests track every task.
+- **AI Assistance:** Generative AI tools (such as ChatGPT or Claude) may be used strictly as an auxiliary tool for refinement (e.g., polishing English phrasing, checking formatting, or brainstorming minor ideas). All core concepts, architectures, system designs, logic, and primary deliverables remain entirely our own original work. AI is never used to generate core content or bypass individual contribution.
 
 ## 7. Workload and contribution
 
