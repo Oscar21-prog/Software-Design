@@ -1,0 +1,52 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/EBank.BuildingBlocks/EBank.BuildingBlocks.csproj" />
+  </Folder>
+  <Folder Name="/src/Host/">
+    <Project Path="src/Host/EBank.Host/EBank.Host.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Accounting/">
+    <Project Path="src/Modules/Accounting/EBank.Accounting.Contracts/EBank.Accounting.Contracts.csproj" />
+    <Project Path="src/Modules/Accounting/EBank.Accounting/EBank.Accounting.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Aml/">
+    <Project Path="src/Modules/Aml/EBank.Aml.Contracts/EBank.Aml.Contracts.csproj" />
+    <Project Path="src/Modules/Aml/EBank.Aml/EBank.Aml.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Cards/">
+    <Project Path="src/Modules/Cards/EBank.Cards.Contracts/EBank.Cards.Contracts.csproj" />
+    <Project Path="src/Modules/Cards/EBank.Cards/EBank.Cards.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Cbs/">
+    <Project Path="src/Modules/Cbs/EBank.Cbs.Contracts/EBank.Cbs.Contracts.csproj" />
+    <Project Path="src/Modules/Cbs/EBank.Cbs/EBank.Cbs.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Crm/">
+    <Project Path="src/Modules/Crm/EBank.Crm.Contracts/EBank.Crm.Contracts.csproj" />
+    <Project Path="src/Modules/Crm/EBank.Crm/EBank.Crm.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Kyc/">
+    <Project Path="src/Modules/Kyc/EBank.Kyc.Contracts/EBank.Kyc.Contracts.csproj" />
+    <Project Path="src/Modules/Kyc/EBank.Kyc/EBank.Kyc.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Loans/">
+    <Project Path="src/Modules/Loans/EBank.Loans.Contracts/EBank.Loans.Contracts.csproj" />
+    <Project Path="src/Modules/Loans/EBank.Loans/EBank.Loans.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Notification/">
+    <Project Path="src/Modules/Notification/EBank.Notification.Contracts/EBank.Notification.Contracts.csproj" />
+    <Project Path="src/Modules/Notification/EBank.Notification/EBank.Notification.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EBank.Accounting.Tests/EBank.Accounting.Tests.csproj" />
+    <Project Path="tests/EBank.Aml.Tests/EBank.Aml.Tests.csproj" />
+    <Project Path="tests/EBank.Cards.Tests/EBank.Cards.Tests.csproj" />
+    <Project Path="tests/EBank.Cbs.Tests/EBank.Cbs.Tests.csproj" />
+    <Project Path="tests/EBank.Crm.Tests/EBank.Crm.Tests.csproj" />
+    <Project Path="tests/EBank.Kyc.Tests/EBank.Kyc.Tests.csproj" />
+    <Project Path="tests/EBank.Loans.Tests/EBank.Loans.Tests.csproj" />
+    <Project Path="tests/EBank.Notification.Tests/EBank.Notification.Tests.csproj" />
+  </Folder>
+</Solution>

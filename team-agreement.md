@@ -1,10 +1,11 @@
-# Team Agreement — EuroGlobe Bank
+# Team Agreement — E-Bank Implementation (Team España)
 
-**Course:** Software Design — Faculty of Mathematics and Informatics, Vilnius University
-**Supervisor:** Vasilij Savin
-**Project:** EuroGlobe Bank — digital banking platform (mortgages, car leasing, multi-signature shared vaults, cards and round-up micro-investments)
+**Course:** Software Design — Faculty of Mathematics and Informatics, Vilnius University  
+**Supervisor:** Vasilij Savin  
+**Phase 1 Project:** EuroGlobe Bank (design specification)  
+**Phase 2 Project:** E-Bank — implementing the technical specification designed by team Fantastic 5  
 
-This agreement applies to the **whole Software Design project**, from the first lab to the final submission, and not only to the first lab.
+This agreement applies to the **whole Software Design project**, from the first lab to the final submission.
 
 ## 1. Team members
 
@@ -12,95 +13,84 @@ This agreement applies to the **whole Software Design project**, from the first 
 | --- | --------- | ----- | --------------- |
 | 1. | Óscar Marín Castro | Exchange | @Oscar21-prog |
 | 2. | Víctor Jesús Castañeda Morales | Exchange | @vicctoor18 |
-| 3. | Jaime de Luiz García | Exchange | @jaimedeluiz|
-| 4. | Martín Rodríguez Ramos | Exchange | @martinrdmos|
-| 5. | Pablo Polledo Blanco | Exchange | @paabloo9|
+| 3. | Jaime de Luiz García | Exchange | @jaimedeluiz |
+| 4. | Martín Rodríguez Ramos | Exchange | @martinrdmos |
+| 5. | Pablo Polledo Blanco | Exchange | @paabloo9 |
 
 ## 2. Project phases
 
 | Phase | What we do | Main output |
 | ----- | ---------- | ----------- |
 | 1. Design | Write the technical specification and API contract of EuroGlobe Bank (first lab). | Shared specification document (`first-lab-assignment.pdf`) |
-| 2. Implementation | Implement the system designed by another student team, working only from their documentation. | Source code in GitHub, tests, demo |
-| 3. Evaluation | Write an evaluation of the other team's documentation, and support the team implementing our design when the course allows it. | Written evaluation |
+| 2. Implementation | Implement E-Bank from Fantastic 5's specification (`E-Bank_Technical_Specification.txt`), working only from their documentation. | Source code in GitHub, tests, demo |
+| 3. Evaluation | Write an evaluation of Fantastic 5's documentation (`docs/evaluation.md`), and support the team implementing our design when allowed. | Written evaluation |
 | 4. Final submission | Finish, test and present the implementation, and close every open item. | Final code, documentation and presentation |
 
 ## 3. Team goals
 
-- Deliver a technical specification and API contract that another team can implement **without needing to ask us anything**.
-- Deliver a working, tested implementation of the other team's design, and handle unclear or incomplete parts of their documentation in a professional way.
+- Deliver a working, tested implementation of E-Bank following the specification, and document unclear or incomplete parts professionally in `docs/decisions.md` and `docs/deviations.md`.
 - Write a fair, specific and useful evaluation of the other team's documentation.
 - Aim for a high grade (9/10 or higher).
 - Make sure everyone participates equally and learns every part of the process: design, implementation and review.
 
 ## 4. Roles and responsibilities
 
-Each member owns one area of the work in each phase. Another member reviews that area before it counts as done. All members can (and should) help in other areas when needed. Owning an area means being responsible for it, not working on it alone.
+Each member owns one area of the work in each phase. Another member reviews that area before it counts as done. Owning an area means being responsible for it, not working on it alone.
 
-### Phase 1 — Design (first lab)
+### Phase 1 — Design (first lab — Completed)
 
 | Role | Responsibilities | Owner |
 | ---- | ---------------- | ----- |
-| Product Owner / Requirements | Overview, target audience, MoSCoW feature list, user stories with measurable acceptance criteria. Confirms scope with the lecturer. | Víctor Jesús Castañeda Morales|
-| Software Architect / Patterns | High-level architecture, package and class diagrams, design patterns and their justification. | Óscar Marín Castro|
-| Process Analyst / Data Model | Business flows (sequence diagrams), data model with typed fields, enums and states. | Jaime de Luiz García|
-| UI/UX Designer | Low-fidelity wireframes for all major use cases, screen transitions, a description of every button and panel. | Pablo Polledo Blanco|
-| API Contract / Integrator / QA | API contract, events, error codes, traceability matrix, final integration of the document, "implementer's hat" review, evaluation of the other team's document. | Martín Rodríguez Ramos|
+| Product Owner / Requirements | Overview, target audience, MoSCoW feature list, user stories with measurable acceptance criteria. Confirms scope with the lecturer. | Víctor Jesús Castañeda Morales |
+| Software Architect / Patterns | High-level architecture, package and class diagrams, design patterns and their justification. | Óscar Marín Castro |
+| Process Analyst / Data Model | Business flows (sequence diagrams), data model with typed fields, enums and states. | Jaime de Luiz García |
+| UI/UX Designer | Low-fidelity wireframes for all major use cases, screen transitions, a description of every button and panel. | Pablo Polledo Blanco |
+| API Contract / Integrator / QA | API contract, events, error codes, traceability matrix, final integration of the document, "implementer's hat" review. | Martín Rodríguez Ramos |
 
-### Phases 2–4 — Implementation, evaluation and final submission
+### Phases 2–4 — Implementation, evaluation and final submission (E-Bank)
 
-When we receive the other team's documentation, we split the implementation work by module or layer (for example: backend/business logic, API, data/persistence, frontend/UI, testing and integration). We record the split in this section or in GitHub Issues **before** we start coding. Every member writes code, writes tests and reviews other members' work.
+Work is split by isolated modules and shared deliverables as defined in `AGENTS.md`:
 
-| Area | Responsibilities | Owner |
-| ---- | ---------------- | ----- |
-| Team coordinator | Keeps GitHub Issues and the task board up to date, and runs the weekly meeting. This role rotates every two weeks. | Rotating |
-| Documentation questions log | Keeps a list of every unclear, missing or contradictory point found in the other team's documentation, with the decision we took for each one. | To be agreed |
-| Evaluation of the other team | Collects everyone's input and writes the final evaluation of the other team's documentation. | To be agreed |
-| Other implementation areas | Assigned when the other team's design is received. | To be agreed |
+| Member | Modules Owned | Documents & Shared Responsibilities |
+| ------ | ------------- | ----------------------------------- |
+| Óscar Marín Castro | **Accounting + Notification + Shared Infrastructure** (`BuildingBlocks`, `Host`, `docker-compose.yml`, `.sln`) | Architecture & tech decisions (`docs/architecture.md`), team agreement, final deviations (`docs/deviations.md` with Jaime) |
+| Víctor Jesús Castañeda Morales | **CBS + Payments** | Implementation proposal (`docs/proposal.md`) |
+| Jaime de Luiz García | **KYC + CRM** | Questions & decisions log (`docs/decisions.md`), final deviations (`docs/deviations.md` with Óscar) |
+| Pablo Polledo Blanco | **Cards + Loans** | GitHub Issues backlog (all 69 features), project board, screen scope (`docs/screens.md`) |
+| Martín Rodríguez Ramos | **AML** | Evaluation of the E-Bank specification (`docs/evaluation.md`) |
 
 ## 5. Communication
 
-- **WhatsApp group:** day-to-day communication, quick questions and urgent notices.
+- **WhatsApp group:** day-to-day communication, quick questions, urgent notices, and notifying the team whenever shared contracts (`*.Contracts`) or `BuildingBlocks` are updated.
 - **Weekly meeting** (20–30 minutes, in person or online): review progress, solve blockers and plan the next week.
 - **Response time:** within 24 hours on weekdays.
 - If a member cannot attend a meeting or meet a deadline, they tell the team **in advance**.
-- Important decisions (scope, architecture, naming, how we interpret unclear parts of the other team's design) are written down in GitHub or in the shared document so nobody misses them.
+- Important decisions (scope, architecture, naming, how we interpret unclear parts of the other team's design) are written down in `docs/decisions.md` so nobody misses them.
 
-## 6. Tools
+## 6. Tools & AI Rule
 
-- **Shared document:** Word / Google Docs for the specification and the evaluation shared with the lecturer.
-- **Diagrams:** draw.io, PlantUML or Mermaid, with one consistent style across the whole document.
-- **GitHub:** repository for submissions, this agreement and the implementation code. GitHub Issues and Pull Requests track every task.
-- **AI Assistance:** Generative AI tools (such as ChatGPT or Claude) may be used strictly as an auxiliary tool for refinement (e.g., polishing English phrasing, checking formatting, or brainstorming minor ideas). All core concepts, architectures, system designs, logic, and primary deliverables remain entirely our own original work. AI is never used to generate core content or bypass individual contribution.
+- **Shared repository & docs:** GitHub repository (`main` branch workflow per `AGENTS.md` §8), Markdown docs in `/docs`, and GitHub Issues for tracking features.
+- **Tech stack:** .NET 10 (LTS), PostgreSQL 16, EF Core 10, React + TypeScript + Vite, xUnit + FluentAssertions + Testcontainers.
+- **AI Assistance Rule:** AI assistants (Claude Code, Cursor, Copilot, Codex, ChatGPT) must read `AGENTS.md` before writing any code. When working for a member, AI must **only modify that member's assigned module folders** (`src/Modules/<Module>/`, `tests/EBank.<Module>.Tests/`, `frontend/src/modules/<module>/`). Changes to `BuildingBlocks`, `Host`, or cross-module contracts must be requested to the corresponding owner. Every member must understand and be able to defend all code they commit.
 
 ## 7. Workload and contribution
 
 - We all commit to an equal contribution (about 20% each) in **every** phase, not only overall.
-- Tasks are split at the start of each phase and recorded in writing (`reparto.md` for phase 1, GitHub Issues for the rest).
-- Contribution is visible through GitHub commits, Pull Requests, reviews and the shared document history.
+- Contribution is visible through GitHub commits, test coverage, and completed module features tracked via GitHub Issues.
 - If someone falls behind, we discuss it openly at the weekly meeting and rebalance tasks. The goal is to finish the work, not to blame anyone.
 
 ## 8. Quality rules
 
-### Design and documentation
+### Implementation & Git Workflow (aligned with `AGENTS.md`)
 
-- **Common glossary:** entity, state, module and event names are agreed at the start and used identically in every section.
-- **Four-eyes rule:** every section is reviewed by at least one member who did not write it.
-- **No vague requirements:** every acceptance criterion has a concrete number or rule (no "fast", "several" or "secure" on its own).
-- **Traceability:** every Must requirement can be traced to a pattern, a flow, a screen, an entity and an endpoint/event.
-- Before submission, we run an "implementer's hat" review: we read the document as if we had to build it, and fix every open question.
-
-### Implementation
-
-- Nobody pushes directly to `main`. Every change goes through a Pull Request.
-- Every Pull Request needs at least one approval from another member before merging.
-- Tests must pass before merging.
-- Requested changes in a review are addressed within 48 hours.
-- We implement what the other team's documentation says. When something is unclear or missing, we do not guess silently: we write it in the documentation questions log, agree on a decision as a team, and record it.
+- **Direct `main` workflow with strict folder ownership:** Each member works inside their own module folders (`src/Modules/<Module>/`, `tests/EBank.<Module>.Tests/`, `frontend/src/modules/<module>/`). Never edit, move, or delete another member's files.
+- **Pull before working and before pushing:** Always run `git pull` before starting work and before pushing. Push small, frequent commits prefixed with the feature ID (e.g., `ACC-01: ...`, `NTF-02: ...`). Never force-push (`git push --force`).
+- **Four-eyes review & Definition of Done:** Code must build cleanly (`dotnet build`), all unit and integration tests must pass (`dotnet test`), and another member reviews the module before final sign-off.
+- **No silent assumptions:** When the E-Bank specification is unclear or missing details, choose the simplest consistent interpretation, log it in `docs/decisions.md`, and inform the team.
 
 ### Evaluation
 
-- The evaluation of the other team's documentation is based on concrete examples (section, page, missing detail), not on general opinions.
+- The evaluation of the other team's documentation (`docs/evaluation.md`) is based on concrete examples (section, page, missing detail), not on general opinions.
 - It is respectful and constructive, and it also mentions the strengths of their work.
 
 ## 9. Deadlines
@@ -116,16 +106,16 @@ When we receive the other team's documentation, we split the implementation work
 
 ## 11. Changes to this agreement
 
-This agreement can be updated at any time during the project if the whole team agrees. Changes are made through a Pull Request so that everyone can see them.
+This agreement can be updated at any time during the project if the whole team agrees and the team is notified.
 
 ## 12. Acceptance
 
-By adding our names below, we agree to follow this team agreement.
+By adding our names below, we agree to follow this team agreement (updated for Phase 2 on 20/11/2026).
 
 | Name | Date | Accepted |
 | ---- | ---- | -------- |
-| Óscar Marín Castro | 28/10/2026 | YES |
-| Víctor Jesús Castañeda Morales | 28/10/2026 | YES |
-| Jaime de Luiz García | 30/10/2026 | YES |
-| Martín Rodríguez Ramos | 3/11/2026 | YES |
-| Pablo Polledo Blanco | 4/11/2026 | YES |
+| Óscar Marín Castro | 20/11/2026 | YES |
+| Víctor Jesús Castañeda Morales | 20/11/2026 | YES |
+| Jaime de Luiz García | 20/11/2026 | YES |
+| Martín Rodríguez Ramos | 20/11/2026 | YES |
+| Pablo Polledo Blanco | 20/11/2026 | YES |
