@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 using EBank.Accounting;
 using EBank.Aml;
@@ -9,11 +10,60 @@ using EBank.Crm;
 using EBank.Kyc;
 using EBank.Loans;
 using EBank.Notification;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddBuildingBlocks();
+
+// Configuración JWT (NFR-1: Access token válido 5 minutos, validación estricta)
+var jwtSection = builder.Configuration.GetSection("Jwt");
+var jwtSecret = jwtSection["Secret"] ?? throw new InvalidOperationException("Jwt:Secret is missing");
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = jwtSection["Issuer"],
+            ValidateAudience = true,
+            ValidAudience = jwtSection["Audience"],
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret)),
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero // Expiración exacta a los 5 minutos
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnChallenge = async context =>
+            {
+                context.HandleResponse();
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                context.Response.ContentType = "application/json";
+                var payload = new ErrorResponse(new ErrorDetail("UNAUTHORIZED", "Valid authentication token is required."));
+                await context.Response.WriteAsync(JsonSerializer.Serialize(payload, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                }));
+            },
+            OnForbidden = async context =>
+            {
+                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                context.Response.ContentType = "application/json";
+                var payload = new ErrorResponse(new ErrorDetail("FORBIDDEN", "Insufficient permissions for this resource."));
+                await context.Response.WriteAsync(JsonSerializer.Serialize(payload, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                }));
+            }
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 // Registro de los 8 módulos
 builder.Services.AddKycModule(builder.Configuration);
@@ -45,6 +95,9 @@ app.Use(async (context, next) =>
         }));
     }
 });
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
 app.MapControllers();
