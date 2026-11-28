@@ -3,6 +3,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\EBank.BuildingBlocks\EBank.BuildingBlocks.csproj" />
     <ProjectReference Include="..\EBank.Notification.Contracts\EBank.Notification.Contracts.csproj" />
+    <ProjectReference Include="..\..\Crm\EBank.Crm.Contracts\EBank.Crm.Contracts.csproj" />
+    <ProjectReference Include="..\..\Kyc\EBank.Kyc.Contracts\EBank.Kyc.Contracts.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
