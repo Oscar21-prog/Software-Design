@@ -9,6 +9,7 @@ public enum NotificationChannel
 
 public enum DeliveryStatus
 {
+    PENDING,
     DELIVERED,
     FAILED
 }
